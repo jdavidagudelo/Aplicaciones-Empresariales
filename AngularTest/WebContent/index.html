@@ -19,25 +19,26 @@
 			</li>
 		</ul>
 		<h2>{{product.price | currency}}</h2>
-		<section>
+		<section ng-controller="PanelController as panel">
 			<ul class = "nav nav-pills">
-			<li><a href ng-click="tab = 1">Descripción</a></li>
-			<li><a href ng-click="tab=2">Especificación</a></li>
-			<li><a href ng-click="tab=3">Reviews</a></li>
+			<li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Descripción</a></li>
+			<li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Especificación</a></li>
+			<li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
 			</ul>
-		</section>
-		<div class="panel" ng-show="tab===1">
+				<div class="panel" ng-show="panel.isSelected(1)">
 			<h4>Descripción</h4>
 			<p>{{product.description}}</p>
 		</div>
-		<div class="panel" ng-show="tab===2">
+		<div class="panel" ng-show="panel.isSelected(2)">
 			<h4>Especificaciones</h4>
 			<p>Ninguna</p>
 		</div>
-		<div class="panel" ng-show="tab===3">
+		<div class="panel" ng-show="panel.isSelected(3)">
 			<h4>Revisiones</h4>
 			<p>Ninguna</p>
 		</div>
+		</section>
+	
 		<button ng-show="product.canPurchase">Agregar a Carrito</button>
 	</div>
 
