@@ -12,11 +12,11 @@
 			<p>The ID is {{greeting.id}}</p>
 			<p>The content is {{greeting.content}}</p>
 		</div>-->
-		<div ng-hide="store.products[0].soldOut" >
-		<h1>{{store.products[0].name}}</h1>
-		<h2>${{store.products[0].price}}</h2>
-		<p>{{store.products[0].description}}</p>
-		<button ng-show="store.products[0].canPurchase">Agregar a Carrito</button>
+		<div ng-repeat="product in store.products"><!--ng-hide="store.products[0].soldOut" >-->
+		<h1>{{product.name}}</h1>
+		<h2>${{product.price}}</h2>
+		<p>{{product.description}}</p>
+		<button ng-show="product.canPurchase">Agregar a Carrito</button>
 		</div>
 	
 </body>

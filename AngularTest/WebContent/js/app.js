@@ -12,5 +12,11 @@
 			description : 'Figura',
 			canPurchase : true,
 			soldOut : false,
-	},];
+	},{
+		name:'Hexahedron',
+		price: 2.95,
+		description : 'Figura',
+		canPurchase : true,
+		soldOut : false,
+},];
 })();
