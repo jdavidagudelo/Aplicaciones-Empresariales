@@ -8,14 +8,13 @@
 	<script src="js/app.js"></script>
 </head>
 <body ng-controller="StoreController as store">
-	<!--<div ng-controller="Hello">
-			<p>The ID is {{greeting.id}}</p>
-			<p>The content is {{greeting.content}}</p>
-		</div>-->
-		<div ng-repeat="product in store.products"><!--ng-hide="store.products[0].soldOut" >-->
+	
+		<div ng-repeat="product in store.products | orderBy:'price'" ng-hide="product.soldOut"><!--ng-hide="store.products[0].soldOut" >-->
 		<h1>{{product.name}}</h1>
-		<h2>${{product.price}}</h2>
+		<img ng-src="{{product.images[0]}}"/>
+		<h2>{{product.price | currency}}</h2>
 		<p>{{product.description}}</p>
+		
 		<button ng-show="product.canPurchase">Agregar a Carrito</button>
 		</div>
 	

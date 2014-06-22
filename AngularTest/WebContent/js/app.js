@@ -4,19 +4,22 @@
 (function(){
 	var app = angular.module('store', []);
 	app.controller("StoreController",function(){
-		this.products = gems;
+		this.products = phones;
 	});
-	var gems = [{
-			name:'Dodecahedron',
-			price: 2.95,
+	var phones = [{
+			name:'Motorola',
+			price: 7.95,
 			description : 'Figura',
 			canPurchase : true,
 			soldOut : false,
+			images : ["img/phones/dell-streak-7.0.jpg"],
+			
 	},{
-		name:'Hexahedron',
-		price: 2.95,
+		name:'Samsung',
+		price: 4.95,
 		description : 'Figura',
 		canPurchase : true,
 		soldOut : false,
+		images : ["img/phones/dell-streak-7.0.jpg"],
 },];
 })();
