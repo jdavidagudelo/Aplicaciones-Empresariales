@@ -7,16 +7,16 @@
 	<script type="text/javascript" src="js/angular.min.js"></script>
 	<script src="js/app.js"></script>
 </head>
-<body>
+<body ng-controller="StoreController as store">
 	<!--<div ng-controller="Hello">
 			<p>The ID is {{greeting.id}}</p>
 			<p>The content is {{greeting.content}}</p>
 		</div>-->
-		<div ng-hide="store.product.soldOut" ng-controller="StoreController as store">
-		<h1>{{store.product.name}}</h1>
-		<h2>${{store.product.price}}</h2>
-		<p>{{store.product.description}}</p>
-		<button ng-show="store.product.canPurchase">Agregar a Carrito</button>
+		<div ng-hide="store.products[0].soldOut" >
+		<h1>{{store.products[0].name}}</h1>
+		<h2>${{store.products[0].price}}</h2>
+		<p>{{store.products[0].description}}</p>
+		<button ng-show="store.products[0].canPurchase">Agregar a Carrito</button>
 		</div>
 	
 </body>
