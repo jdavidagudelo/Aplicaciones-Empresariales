@@ -12,7 +12,7 @@
 			description : 'Figura',
 			canPurchase : true,
 			soldOut : false,
-			images : ["img/phones/dell-streak-7.0.jpg"],
+			images : ["img/phones/dell-streak-7.0.jpg","img/phones/dell-venue.3.jpg"],
 			
 	},{
 		name:'Samsung',

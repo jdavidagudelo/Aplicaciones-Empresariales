@@ -2,21 +2,44 @@
 <html ng-app="store">
 <head>
 <title>Almacen</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" />
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
-	<script type="text/javascript" src="js/angular.min.js"></script>
-	<script src="js/app.js"></script>
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script src="js/app.js"></script>
 </head>
 <body ng-controller="StoreController as store">
-	
-		<div ng-repeat="product in store.products | orderBy:'price'" ng-hide="product.soldOut"><!--ng-hide="store.products[0].soldOut" >-->
+
+	<div ng-repeat="product in store.products | orderBy:'price'"
+		ng-hide="product.soldOut">
+		<!--ng-hide="store.products[0].soldOut" >-->
 		<h1>{{product.name}}</h1>
-		<img ng-src="{{product.images[0]}}"/>
+		<ul class="img-thumbnails clearfix">
+			<li class="small-image pull-left thumbnail"
+				ng-repeat="image in product.images"><img ng-src="{{image}}" />
+			</li>
+		</ul>
 		<h2>{{product.price | currency}}</h2>
-		<p>{{product.description}}</p>
-		
-		<button ng-show="product.canPurchase">Agregar a Carrito</button>
+		<section>
+			<ul class = "nav nav-pills">
+			<li><a href ng-click="tab = 1">Descripción</a></li>
+			<li><a href ng-click="tab=2">Especificación</a></li>
+			<li><a href ng-click="tab=3">Reviews</a></li>
+			</ul>
+		</section>
+		<div class="panel" ng-show="tab===1">
+			<h4>Descripción</h4>
+			<p>{{product.description}}</p>
 		</div>
-	
+		<div class="panel" ng-show="tab===2">
+			<h4>Especificaciones</h4>
+			<p>Ninguna</p>
+		</div>
+		<div class="panel" ng-show="tab===3">
+			<h4>Revisiones</h4>
+			<p>Ninguna</p>
+		</div>
+		<button ng-show="product.canPurchase">Agregar a Carrito</button>
+	</div>
+
 </body>
 </html>
