@@ -11,7 +11,6 @@
 
 	<div ng-repeat="product in store.products | orderBy:'price'"
 		ng-hide="product.soldOut">
-		<!--ng-hide="store.products[0].soldOut" >-->
 		<h1>{{product.name}}</h1>
 		<ul class="img-thumbnails clearfix">
 			<li class="small-image pull-left thumbnail"
@@ -21,12 +20,12 @@
 		<h2>{{product.price | currency}}</h2>
 		<section ng-controller="PanelController as panel">
 			<ul class = "nav nav-pills">
-			<li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Descripción</a></li>
-			<li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Especificación</a></li>
+			<li ng-class="{active:panel.isSelected(1)}"><a href ng-click="panel.selectTab(1)">Descripci&oacute;n</a></li>
+			<li ng-class="{active:panel.isSelected(2)}"><a href ng-click="panel.selectTab(2)">Especificaci&oacute;n</a></li>
 			<li ng-class="{active:panel.isSelected(3)}"><a href ng-click="panel.selectTab(3)">Reviews</a></li>
 			</ul>
 				<div class="panel" ng-show="panel.isSelected(1)">
-			<h4>Descripción</h4>
+			<h4>Descripci&oacute;n</h4>
 			<p>{{product.description}}</p>
 		</div>
 		<div class="panel" ng-show="panel.isSelected(2)">
